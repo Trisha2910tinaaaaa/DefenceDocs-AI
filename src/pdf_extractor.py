@@ -2,7 +2,7 @@ import fitz
 from .ocr import ocr_page
 
 
-def extract_pdf(pdf_path, ocr_threshold=50):
+def extract_text_from_pdf(pdf_path, ocr_threshold=50):
 
     doc = fitz.open(pdf_path)
 
