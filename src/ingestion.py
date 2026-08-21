@@ -1,5 +1,7 @@
 from pathlib import Path
+
 from .pdf_extractor import extract_text_from_pdf
+from .cleaner import clean_text
 
 
 def ingest_documents(raw_directory):
@@ -13,6 +15,9 @@ def ingest_documents(raw_directory):
         print(f"Processing: {pdf_path.name}")
 
         pages = extract_text_from_pdf(pdf_path)
+
+        for page in pages:
+            page["text"] = clean_text(page["text"])
 
         documents.append({
             "document_id": pdf_path.stem,
