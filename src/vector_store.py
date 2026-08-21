@@ -16,6 +16,8 @@ def create_index(embeddings):
     index.add(embeddings)
 
     return index
+
+
 def search(
     index,
     model,
