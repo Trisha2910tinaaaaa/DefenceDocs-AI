@@ -1,5 +1,5 @@
 from pathlib import Path
-from .pdf_extractor import extract_pdf
+from .pdf_extractor import extract_text_from_pdf
 
 
 def ingest_documents(raw_directory):
@@ -12,7 +12,7 @@ def ingest_documents(raw_directory):
 
         print(f"Processing: {pdf_path.name}")
 
-        pages = extract_pdf(pdf_path)
+        pages = extract_text_from_pdf(pdf_path)
 
         documents.append({
             "document_id": pdf_path.stem,
