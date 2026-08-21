@@ -1,9 +1,9 @@
-import fitz
-import pytesseract
 from PIL import Image
+import pytesseract
 
 
 def ocr_page(page, dpi=200):
+
     pix = page.get_pixmap(dpi=dpi)
 
     image = Image.frombytes(
