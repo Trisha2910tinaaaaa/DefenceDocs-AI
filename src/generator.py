@@ -44,7 +44,7 @@ relevant document and page numbers.
 """
 
     response = client.models.generate_content(
-        model="models/gemini-3.6-flash",
+        model="gemini-3-flash-preview",
         contents=prompt
     )
 
